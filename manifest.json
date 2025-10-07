@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "CF Contest Graph",
+  "version": "1.0",
+  "description": "Plots CF contest participants as dots by rating vs rank",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/contest/*/standings*"],
+      "js": ["content.js"]
+    }
+  ]
+}
