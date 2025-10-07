@@ -10,10 +10,10 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "content_scripts": [
-    {
-      "matches": ["https://codeforces.com/contest/*/standings*"],
-      "js": ["content.js"]
-    }
-  ]
+ "content_scripts": [
+  {
+    "matches": ["https://codeforces.com/contest/*/standings*"],
+    "js": ["plotly-latest.min.js", "graph.js", "content.js"]
+  }
+]
 }
