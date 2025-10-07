@@ -1,4 +1,12 @@
-(async function() {
+// Inject Plotly from CDN
+const plotlyScript = document.createElement('script');
+plotlyScript.src = "https://cdn.plot.ly/plotly-latest.min.js";
+plotlyScript.onload = () => {
+    initGraph(); // your function that calls plotGraph()
+};
+document.head.appendChild(plotlyScript);
+
+function initGraph() {
     const div = document.createElement('div');
     div.id = 'graphDiv';
     div.style.width = '100%';
@@ -14,4 +22,4 @@
             plotGraph(response.users, myHandles);
         });
     });
-})();
+}
